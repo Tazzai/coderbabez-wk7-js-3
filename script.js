@@ -1,42 +1,31 @@
 $("document").ready(function() {
-  // declare a variable that stores the number of
-  // dog pictures to display on the page
 
-  // write a function that increases the dog count by 1
+var x=0;
 
-  // write a function decreases the dog count by 1
+function increment(){
+  x=x+1;
+};
 
-  // write a click handler that adds 1 to the dog 
-  // count and then calls the displayDogs function. 
-  // Pass the dog count to the function
+function decrement(){
+  x=x-1;
+};
 
-  // write a click handler that removes 1 from the dog 
-  // count and then calls the displayDogs function. 
-  // Pass the dog count to the function
-
-  // Can you combine your functions that increase and
-  // decrease the dog count into 1 function?
-
-  // Update the click handler so that it also displays
-  // the current count value on the page
-
-  // If there's time... (or else it's homework!)
-  // Let's double up!
-  // Create 2 columsn of dogs with 2 sets of buttons
-  // You should be able to add/remove from each column
-  // separately
-  // Put a border between the 2 colums  so you can 
-  // clearly see the difference
+$('#moreButton').click(function(){
+  increment();
+  displayDogs(x);
 });
 
+$('#lessButton').click(function(){
+  decrement();
+  displayDogs(x);
+});
 
 function displayDogs(count) {
   $('#dogs').empty();
   for(var i=0; i<count; i++) {
     $('#dogs').append("<img src='" + dog(i) + "' />");
-  }
-}
-
+  };
+};
 
 function dog(index) {
   dogs = [
@@ -83,3 +72,34 @@ function dog(index) {
   ];
   return dogs[index % dogs.length].image;
 }
+
+
+  // declare a variable that stores the number of
+  // dog pictures to display on the page
+
+  // write a function that increases the dog count by 1
+
+  // write a function decreases the dog count by 1
+
+  // write a click handler that adds 1 to the dog
+  // count and then calls the displayDogs function.
+  // Pass the dog count to the function
+
+  // write a click handler that removes 1 from the dog
+  // count and then calls the displayDogs function.
+  // Pass the dog count to the function
+
+  // Can you combine your functions that increase and
+  // decrease the dog count into 1 function?
+
+  // Update the click handler so that it also displays
+  // the current count value on the page
+
+  // If there's time... (or else it's homework!)
+  // Let's double up!
+  // Create 2 columsn of dogs with 2 sets of buttons
+  // You should be able to add/remove from each column
+  // separately
+  // Put a border between the 2 colums  so you can
+  // clearly see the difference
+});
